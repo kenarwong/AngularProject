@@ -1,4 +1,5 @@
 ﻿import * as angular from 'angular';
+require("jquery");
 
 import HelloWorld from './hello-world';
 
@@ -15,7 +16,7 @@ class Config {
 Config.$inject = ['$routeProvider'];
 
 export default angular.module('app', [
-        'ngRoute',
+        require('angular-route'),
         HelloWorld
     ])
     .config(Config);
