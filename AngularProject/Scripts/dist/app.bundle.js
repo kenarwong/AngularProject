@@ -63,19 +63,57 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-__webpack_require__(1);
+__webpack_require__(4);
 module.exports = angular;
 
 
 /***/ },
 /* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var angular = __webpack_require__(0);
+var hello_world_controller_1 = __webpack_require__(3);
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = angular.module('app.HelloWorld', [])
+    .controller('HelloCtrl', hello_world_controller_1.default)
+    .name;
+//# sourceMappingURL=index.js.map
+
+/***/ },
+/* 2 */
+/***/ function(module, exports) {
+
+module.exports = "<h1>Test</h1>\r\n<div>\r\n    {{vm.helloText}}\r\n</div>";
+
+/***/ },
+/* 3 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+//import { app } from '../app';
+
+var HelloCtrl = (function () {
+    function HelloCtrl() {
+        this.helloText = 'Hello World!';
+    }
+    return HelloCtrl;
+}());
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = HelloCtrl;
+//app.controller('HelloCtrl', HelloCtrl); 
+//# sourceMappingURL=hello-world.controller.js.map
+
+/***/ },
+/* 4 */
 /***/ function(module, exports) {
 
 /**
@@ -33062,37 +33100,31 @@ $provide.value("$locale", {
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
 
 /***/ },
-/* 2 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var angular = __webpack_require__(0);
-var app;
-(function (app) {
-    var Config = (function () {
-        function Config($routeProvider) {
-            $routeProvider
-                .when("/", {
-                templateUrl: "Scripts/app/hello-world/hello.html",
-                controller: "HelloCtrl as vm"
-            })
-                .otherwise({ redirectTo: '/' });
-        }
-        return Config;
-    }());
-    Config.$inject = ['$routeProvider'];
-    var mainApp = angular.module('AngularApp', ['ngRoute']);
-    var HelloCtrl = (function () {
-        function HelloCtrl() {
-            this.helloText = 'Hello World!';
-        }
-        return HelloCtrl;
-    }());
-    angular.module('AngularApp')
-        .controller('HelloCtrl', HelloCtrl);
-    mainApp.config(Config);
-})(app || (app = {}));
+var hello_world_1 = __webpack_require__(1);
+var Config = (function () {
+    function Config($routeProvider) {
+        $routeProvider
+            .when("/", {
+            template: __webpack_require__(2),
+            controller: "HelloCtrl as vm"
+        })
+            .otherwise({ redirectTo: '/' });
+    }
+    return Config;
+}());
+Config.$inject = ['$routeProvider'];
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = angular.module('app', [
+    'ngRoute',
+    hello_world_1.default
+])
+    .config(Config);
 //# sourceMappingURL=app.js.map
 
 /***/ }

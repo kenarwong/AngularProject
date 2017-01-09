@@ -1,25 +1,21 @@
 ﻿import * as angular from 'angular';
 
-module app {
-    class Config {
-        constructor($routeProvider: angular.route.IRouteProvider) {
-            $routeProvider
-                .when("/", {
-                    templateUrl: "Scripts/app/hello-world/hello.html",
-                    controller: "HelloCtrl as vm"
-                })
-                .otherwise({ redirectTo: '/' });
-        }
-    }
-    Config.$inject = ['$routeProvider'];
+import HelloWorld from './hello-world';
 
-    var mainApp = angular.module('AngularApp', ['ngRoute']);
-    
-    class HelloCtrl {
-        helloText = 'Hello World!';
+class Config {
+    constructor($routeProvider: angular.route.IRouteProvider) {
+        $routeProvider
+            .when("/", {
+                template: require('./hello-world/hello.html'),
+                controller: "HelloCtrl as vm"
+            })
+            .otherwise({ redirectTo: '/' });
     }
-    angular.module('AngularApp')
-        .controller('HelloCtrl', HelloCtrl);
-
-    mainApp.config(Config);
 }
+Config.$inject = ['$routeProvider'];
+
+export default angular.module('app', [
+        'ngRoute',
+        HelloWorld
+    ])
+    .config(Config);
