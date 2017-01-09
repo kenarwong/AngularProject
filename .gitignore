@@ -7,6 +7,10 @@
 **/Scripts/app/**/*.js
 **/Scripts/app/**/*.map
 
+# Webpack distribution folder
+**/Scripts/dist/**/*.js
+**/Scripts/dist/**/*.map
+
 # User-specific files
 *.suo
 *.user
