@@ -1,4 +1,5 @@
-﻿const path = require('path');
+﻿/// <binding />
+const path = require('path');
 
 "use strict";
 
