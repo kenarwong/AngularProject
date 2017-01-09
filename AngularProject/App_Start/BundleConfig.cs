@@ -9,9 +9,7 @@ namespace AngularProject
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new StyleBundle("~/Scripts/lib").Include(
-                      "~/Scripts/node_modules/dist/jquery/jquery.min.js",
-                      "~/Scripts/node_modules/angular/angular.min.js",
-                      "~/Scripts/node_modules/angular-route/angular-route.min.js"
+                      "~/Scripts/dist/vendor.bundle.js"
                       ));
 
             bundles.Add(new StyleBundle("~/Scripts/app").Include(
