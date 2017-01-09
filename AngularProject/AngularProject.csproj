@@ -232,7 +232,8 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\app\app.ts" />
-    <TypeScriptCompile Include="Scripts\app\hello-world\HelloCtrl.ts" />
+    <TypeScriptCompile Include="Scripts\app\hello-world\hello-world.controller.ts" />
+    <TypeScriptCompile Include="Scripts\app\hello-world\index.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

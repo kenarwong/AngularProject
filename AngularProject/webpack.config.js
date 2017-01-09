@@ -1,9 +1,17 @@
 ﻿"use strict";
 
 module.exports = {
-    devtool: 'source-map',
     entry: "./Scripts/app/app.js",
     output: {
         filename: "./Scripts/dist/app.bundle.js"
-    }
+    },
+    module: {
+        loaders: [
+          {
+              test: /\.html$/,
+              loader: "html-loader"
+          }
+        ]
+    },
+    devtool: 'source-map'
 };
