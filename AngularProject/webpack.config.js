@@ -1,4 +1,7 @@
-﻿"use strict";
+﻿/// <binding />
+const path = require('path');
+
+"use strict";
 
 module.exports = {
     entry: "./Scripts/app/app.js",
